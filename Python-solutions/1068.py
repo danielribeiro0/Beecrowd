@@ -8,14 +8,18 @@ def check_expression(expression):
             stack.append(char)
         elif char == ')':
             if not stack:
-                return 'Incorrect'
+                return 'incorrect'
             stack.pop()
     if stack:
-        return 'Incorrect'
-    return 'Correct'
+        return 'incorrect'
+    return 'correct'
   
-expression = input()
-print(check_expression(expression))
+while True:
+  try:
+    expression = input()
+    print(check_expression(expression))
+  except EOFError:
+    break
 
 
 
@@ -30,7 +34,7 @@ print(check_expression(expression))
 #     elif s == ')':
 #       stack.pop()
       
-#   return "Correct" if len(stack) == 0 else "Incorrect"
+#   return "correct" if len(stack) == 0 else "incorrect"
 
 # expression = input()
 # print(check_expression(expression))
